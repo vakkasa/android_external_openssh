@@ -40,7 +40,11 @@ LOCAL_SHARED_LIBRARIES += libssl libcrypto libdl libz
 
 LOCAL_MODULE := libssh
 
-LOCAL_CFLAGS += -O3 -fno-strict-aliasing
+LOCAL_CFLAGS += -O3
+
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING),yes)
+LOCAL_CFLAGS += -fno-strict-aliasing
+endif
 
 include $(BUILD_SHARED_LIBRARY)
 
