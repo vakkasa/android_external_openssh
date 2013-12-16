@@ -42,7 +42,7 @@ LOCAL_MODULE := libssh
 
 LOCAL_CFLAGS += -O3
 
-ifneq ($(DEBUG_FORCE_STRICT_ALIASING),yes)
+ifneq ($(DEBUG_FORCE_STRICT_ALIASING_EXP),yes)
 LOCAL_CFLAGS += -fno-strict-aliasing
 endif
 
